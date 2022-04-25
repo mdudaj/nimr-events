@@ -1,0 +1,60 @@
+@page {
+  size: "A4";
+  margin: 2.54cm;
+
+  @top-center {
+    background: #09c3db;
+    content: "";
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+  }
+  @bottom-right {
+    background: #09c3db;
+    content: counter(page, upper-roman);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+  }
+  @bottom-center {
+    background: #09c3db;
+    content: "";
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+  }
+}
+
+@page :first {
+  @top-left {
+    content: "APPENDIX I: NIMR Publications";
+    font-size: 13pt;
+    height: 1cm;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+body {
+  counter-reset: research-counter;
+  background-color: transparent;
+  line-height: 1;
+}
+
+.page-content .page-item h4 {
+  counter-increment: research-counter;
+}
+
+.page-content .page-item h4 {
+  list-style: none outside;
+  display: list-item;
+  margin: 0cm;
+  padding: 0cm;
+}
+
+.page-content .page-item h4::before {
+  content: counter(research-counter) ". ";
+  font-weight: bold;
+}

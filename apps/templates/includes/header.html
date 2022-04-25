@@ -1,0 +1,66 @@
+{% load static %}
+<nav
+  class="navbar navbar-expand-xl fixed-top navbar-light bg-white pmd-navbar pmd-z-depth-light-1"
+>
+  <!--container -->
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" title="" href="{% url 'home' %}">
+        <img
+          class="logo-light"
+          src="{% static 'assets/images/logo/nimr.png' %}"
+          title="Annual Joint Scientific Conference"
+          alt="Annual Joint Scientific Conference"
+        />
+      </a>
+      <div class="pmd-navbar-right-icon pull-right header-menu">
+        <button
+          class="pmd-ripple-effect navbar-toggle pmd-navbar-toggle pmd-sidebar-toggle-right"
+          type="button"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+    <!--navbar-header -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div
+      id="bs-navbar-collapse-1"
+      class="collapse navbar-collapse pmd-navbar-sidebar"
+    >
+      <!--nav -->
+      <ul class="nav navbar-nav navbar-right" id="navbar">
+        <li data-menuanchor="ajsc" class="active">
+          <a href="{% url 'home' %}" title="Home">Home</a>
+        </li>
+        <li data-menuanchor="about">
+          <a href="{% url 'home' %}" title="About">About</a>
+        </li>
+        <li data-menuanchor="abstract">
+          <a href="{% url 'home' %}" title="Abstract">Abstract</a>
+        </li>
+        <li>
+          <a href="{% url 'home' %}" title="Symposium">Symposium</a>
+        </li>
+        <li data-menuanchor="contact-us">
+          <a href="{% url 'home' %}" title="Contact">Contact</a>
+        </li>
+        <li data-menuanchor="login">
+          <a href="{% url 'account_login' %}" title="Login">Login</a>
+        </li>
+        <li data-menuanchor="sign-up">
+          <a href="{% url 'account_signup' %}" title="Register">Register</a>
+        </li>
+        <span class="nav-active"></span>
+      </ul>
+      <!--nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+    
+  </div>
+  <!-- container -->
+</nav>

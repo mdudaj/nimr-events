@@ -1,0 +1,12 @@
+<!-- Internationalization tags -->
+{% load i18n %}
+
+<!-- allauth account tags -->
+{% load account %}
+
+<!-- Paragraph -->
+{% user_display user as user_display %}
+<p class="lead">
+  <strong>{% trans "Note" %}:</strong> {% blocktrans %}you are already logged in as {{
+  user_display }}.{% endblocktrans %}
+</p>

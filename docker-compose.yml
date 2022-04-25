@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  web:
+    container_name: nimrevents_web
+    restart: unless-stopped
+    env_file: .env
+    build: .
+    volumes:
+      - .:/code
+    networks:
+      - db_network
+      - web_network
+    depends_on: 
+      - db
+
+  db:
+    container_name: nimrevents_db
+    restart: unless-stopped
+    image: postgis/postgis:14-master
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=N1mx@9653
+      - POSTGRES_DB=nimrevents_dev
+    networks:
+      - db_network
+
+  redis:
+    container_name: nimrevents_redis
+    restart: unless-stopped
+    image: redis:alpine
+    networks:
+      - web_network
+
+  nginx:
+    container_name: nimrevents_nginx
+    restart: unless-stopped
+    image: nginx:1.21.6-alpine
+    ports:
+      - "8280:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    networks:
+      - web_network
+    depends_on: 
+      - web
+
+volumes:
+  postgres_data:
+
+networks:
+  db_network:
+    driver: bridge
+  web_network:
+    driver: bridge
+ 

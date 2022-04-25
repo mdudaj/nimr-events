@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %}
+
+<!-- Head title -->
+{% block title_head %}Annual Joint Scientific Conference{% endblock title_head %}
+
+<!-- specific page stylesheets-->
+{% block stylesheets %}{% endblock stylesheets %}
+
+<!-- Header -->
+{% block header %}{% include 'includes/header.html' %}{% endblock header %}
+
+<!-- content area -->
+{% block content %}
+
+<div class="pmd-content content-area">
+  <!-- Page title -->
+  {% block title_page %}{% endblock title_page %}
+  <!-- End page title-->
+
+  <!-- Breadcrumbs -->
+  {% block breadcrumbs %}{% endblock breadcrumbs %}
+  <!-- End Breadcrumbs -->
+
+  <!-- Page content-->
+  {% block page_content %}{% endblock page_content %}
+  <!-- End page content -->
+</div>
+
+{% endblock content %}

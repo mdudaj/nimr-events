@@ -1,0 +1,60 @@
+@page {
+  size: "A4";
+  margin: 2.54cm;
+
+  @top-center {
+    background: #09c3db;
+    content: "";
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+  }
+  @bottom-right {
+    background: #09c3db;
+    content: counter(page, upper-roman);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+  }
+  @bottom-center {
+    background: #09c3db;
+    content: "";
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+  }
+}
+
+@page :first {
+  @top-left {
+    content: "APPENDIX II: NIMR Projects";
+    font-size: 13pt;
+    height: 1cm;
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+body {
+  background-color: transparent;
+  line-height: 1;
+}
+
+.table-project table {
+  table-layout: inherit;
+  width: 93.5%;
+  page-break-inside: avoid;
+}
+
+.table-project table td {
+  border: 1px solid black;
+}
+
+#project ul li {
+  list-style: circle outside;
+  display: list-item;
+  margin: 0cm;
+  padding: 0cm;
+}
