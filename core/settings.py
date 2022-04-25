@@ -17,7 +17,8 @@ SECRET_KEY = "django-insecure-4(k4z6pl+3q&4t+qgs^8a3#49&*!^a+-2nqifn=n$_r6qejoee
 DEBUG = True
 
 # load production server from .env
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", os.environ.get("SERVER", "127.0.0.1")]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1",
+                 os.environ.get("SERVER", "127.0.0.1")]
 
 # public url
 PUBLIC_URL = os.environ.get("FRONT_URL", "http://localhost:8280")
